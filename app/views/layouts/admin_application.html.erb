@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bitgon</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/assets/bootstrap.css" rel="stylesheet">
+		<link href="/assets/bootstrap.min.css" rel="stylesheet">
+		<link href="/assets/bootstrap-theme.css" rel="stylesheet">
+		<link href="/assets/bootstrap-theme.min.css" rel="stylesheet">
+		<link href="/assets/style.css" rel="stylesheet">
+		<link href="/assets/font-awesome.css" rel="stylesheet">
+		<link href="/assets/font-awesome.min.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700i" rel="stylesheet">
+	
+	</head>
+	<body>
+		<!-- ----------------------------------START HEADER ------------------------------------- -->
+		<%= render 'layouts/admin_header' %>
+		<%= yield %>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="/assets/bootstrap.js" type="text/javascript"></script>	
+		<script>	
+		    $(document).ready(function () {
+		        $('.dropdown-toggle').dropdown();
+
+		        $(".dropdown").hover(            
+					function() {
+						$('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideDown("fast");
+						$(this).toggleClass('open');        
+					},
+					function() {
+						$('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideUp("fast");
+						$(this).toggleClass('open');       
+					}
+				);
+
+				$('.search-icon').on('click', function () {
+					$('.search-container').toggleClass('opened');
+				});
+
+				activaTab('suggested-tags');
+		    });
+
+		    function activaTab(tab){
+			  $('.nav-tabs a[href="#' + tab + '"]').tab('show');
+			};
+		</script>
+	</body>
+</html>
