@@ -1,3 +1,149 @@
+<!-- ----------------------------------MODALS ------------------------------------- -->
+
+<div id="submit-modal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<a class="modal-close-btn" href="#" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></a>
+				<h4 class="modal-title">SUBMIT</h4>
+			</div>
+			<div class="modal-body">
+				<form action="/admin/submit-link" id="submit-link" method="post">
+					<i class="fa fa-newspaper-o" aria-hidden="true"></i>
+					<label class="submit-modal-title">NEWS</label>
+					<span class="submit-modal-extra-txt">News, articles, rumors, reviews, media etc.</span>
+					<input  class="form-control" name="tb_url" placeholder="Url">
+					<br/>
+					<i style="color: #ecc856;" class="fa fa-star" aria-hidden="true"></i>
+					<label class="submit-modal-title">USER REVIEW</label>
+					<span class="submit-modal-extra-txt">Share your own user review.</span>
+					<div class="login-btn">
+						<a href="#" class="action-button shadow animate green" >Submit</a>					
+					</div>	
+					<div class="clearfix"></div>		
+				</form>			
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="login-modal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">					
+				<a class="modal-close-btn" href="#" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></a>					
+				<ul id="tabs" class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active">
+						<a href="#all" role="tab" data-toggle="tab"><h4 class="modal-title">LOGIN</h4></a>
+					</li>
+					<li role="presentation">
+						<a href="#online" role="tab" data-toggle="tab"><h4 class="modal-title">REGISTER</h4></a>
+					</li>			
+				</ul>				
+			</div>
+			<div class="modal-body">
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane fade in active" id="all">
+						<input  class="form-control" placeholder="Enter email">
+						<br/>
+						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+						<a class="forgot-pw" href="#">Forgot Password</a>
+						<div class="login-btn">
+							<a href="#" class="action-button shadow animate green" >Login</a>					
+						</div>					
+						<div class="clearfix"></div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade" id="online">
+						<input  class="form-control" placeholder="First Name">
+						<br/>
+						<input  class="form-control" placeholder="Last Name">
+						<br/>
+						<input  class="form-control" placeholder="Email">
+						<br/>							
+						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+						<br/>
+						<div class="login-btn">
+							<a href="#" class="action-button shadow animate green" >Register</a>					
+						</div>					
+						<div class="clearfix"></div>												
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="add-video" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<a class="modal-close-btn" href="#" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></a>
+				<h4 class="modal-title">Video Embed Code</h4>
+			</div>
+			<div class="modal-body">					
+				<span class="submit-modal-extra-txt"> <i class="fa fa-play-circle" aria-hidden="true"></i>Embed code from video providers like youtube, hulu and vimeo.</span>
+				<input  class="form-control" placeholder="Paste video code here">
+				<br/>	
+				<div class="login-btn">
+					<a href="#" class="action-button shadow animate green" >Submit</a>					
+				</div>	
+				<div class="clearfix"></div>						
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="credit-url" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<a class="modal-close-btn" href="#" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></a>
+				<h4 class="modal-title">Add Alternative Source</h4>
+			</div>
+			<div class="modal-body">					
+				<span class="submit-modal-extra-txt"><i class="fa fa-check-square-o" aria-hidden="true"></i>Give credit to the website or blog that helped you find the story only if different from the main story URL you are submitting.</span>
+				<input  class="form-control" placeholder="Paste video code here">
+				<br/>	
+				<div class="login-btn">
+					<a href="#" class="action-button shadow animate green" >Submit</a>					
+				</div>	
+				<div class="clearfix"></div>						
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="create-tag" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<a class="modal-close-btn" href="#" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></a>
+				<h4 class="modal-title">Create a Tag</h4>
+			</div>
+			<div class="modal-body">					
+				<span class="submit-modal-extra-txt"><i class="fa fa-plus-circle" aria-hidden="true"></i>Type in your desired tag</span>
+				<input  class="form-control" placeholder="Paste video code here">
+				<br/>	
+				<div class="login-btn">
+					<a href="#" class="action-button shadow animate green" >Submit</a>					
+				</div>	
+				<div class="clearfix"></div>						
+			</div>
+		</div>
+	</div>
+</div>	
+
+
+
+
+<!-- ---------------------------------- END MODALS ------------------------------------- -->
+
 <div id="header">
 	<div class="container">
 		<nav class="navbar ">
@@ -121,3 +267,44 @@
 
 
 <!-- -------------------------------------END HEADER------------------------------------- -->
+
+<script>	
+    $(document).ready(function () {
+        $('.dropdown-toggle').dropdown();
+
+        $(".dropdown").hover(            
+			function() {
+				$('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideDown("fast");
+				$(this).toggleClass('open');        
+			},
+			function() {
+				$('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideUp("fast");
+				$(this).toggleClass('open');       
+			}
+		);
+
+		$('.search-icon').on('click', function () {
+			$('.search-container').toggleClass('opened');
+		});
+
+		activaTab('suggested-tags');
+
+		$("#btn-get").on("click", function(){
+			// $.ajax({
+			// 	url: 'test/get-meta',
+			// 	type: 'GET',
+			// 	data: { url: $("#url").val() },
+			// 	success: function(response){
+			// 		$("#url-dis").html(response.url);
+			// 		$("#title").html(response.title);
+			// 		$("#des").html(response.description);
+			// 		$("#img").attr('src', response.meta_tags['property']['og:image'][0]);
+			// 	}
+			// });	
+		});
+    });
+
+    function activaTab(tab){
+	  $('.nav-tabs a[href="#' + tab + '"]').tab('show');
+	};
+</script>

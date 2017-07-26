@@ -5,7 +5,7 @@
 			<div class="header-title">SUBMIT STORY</div>
 			<div class=" col-md-4">
 				<div class="link-image">
-					<img class="img-responsive" src="/assets/img-placeholder.jpg">
+					<img class="img-responsive" src="<%= @page ? @page.meta_tags['property']['og:image'][0] : '/assets/img-placeholder.jpg' %>">
 					<br/>
 				<div class="submit-story-btn-container">
 					<div class="video-btn-container">
@@ -20,16 +20,16 @@
 			<div class=" col-md-8">
 				<div class="link-details-container">
 					<div class="input-group">
-						<input type="text" class="form-control link-holder" placeholder="https://www.polygon.com/2017/7/20/16006874/will-smith-christopher-nolan-netflix-theaters-bright">
+						<input type="text" class="form-control link-holder" placeholder="Url" value="<%= @page ? @page.url : '' %>">
 						<span class="input-group-btn">
 							<button class="btn btn-secondary" type="button" style="padding: 9px 17px;background: #1bb76e;"><i class="fa fa-external-link" aria-hidden="true"></i></button>
 						</span>
 					</div>
 					<div class="input-group">
-						<input class="form-control" placeholder="Title">
+						<input class="form-control" placeholder="Title" value="<%= @page ? @page.title : '' %>">
 					</div>
 					<div class="input-group">
-						<textarea class="form-control textarea" id="Message" placeholder="Synopsis"></textarea>
+						<textarea class="form-control textarea" id="Message" placeholder="Synopsis"><%= @page ? @page.description : '' %></textarea>
 					</div>
 					<div class="no-pads-left col-md-6" >
 						<select id="selectbasic" name="selectbasic" class="form-control input-md">
@@ -69,8 +69,11 @@
 				<div class="artcle-tags">
 					<div class="tags-header">TAGS</div>
 					<ul class="tags-list">
-						<li><a href="">Sample Tag <a class="del-tag" href="#"><i class="fa fa-times" aria-hidden="true"></i></a></a></li>
-						<li><a href="">TAGS<a class="del-tag" href="#"><i class="fa fa-times" aria-hidden="true"></i></a></a></li>
+						<% @page.meta_tag['name']['keywords'].split(',').each do |tag| %>
+							<li><a href=""><%= tag %><a class="del-tag" href="#"><i class="fa fa-times" aria-hidden="true"></i></a></a></li>
+						<% end %>
+						
+						<!-- <li><a href="">TAGS<a class="del-tag" href="#"><i class="fa fa-times" aria-hidden="true"></i></a></a></li>
 						<li><a href="">SamplesTAGS<a class="del-tag" href="#"><i class="fa fa-times" aria-hidden="true"></i></a></a></li>
 						<li><a href="">SampleGS<a class="del-tag" href="#"><i class="fa fa-times" aria-hidden="true"></i></a></a></li>
 						<li><a href="">TAGS PA MORE<a class="del-tag" href="#"><i class="fa fa-times" aria-hidden="true"></i></a></a></li>
@@ -82,7 +85,7 @@
 						<li><a href="">JUST TAGS<a class="del-tag" href="#"><i class="fa fa-times" aria-hidden="true"></i></a></a></li>
 						<li><a href="">SamplesTAGS<a class="del-tag" href="#"><i class="fa fa-times" aria-hidden="true"></i></a></a></li>
 						<li><a href="">SlesTAGS<a class="del-tag" href="#"><i class="fa fa-times" aria-hidden="true"></i></a></a></li>
-						<li><a href="">SesTAGS<a class="del-tag" href="#"><i class="fa fa-times" aria-hidden="true"></i></a></a></li>
+						<li><a href="">SesTAGS<a class="del-tag" href="#"><i class="fa fa-times" aria-hidden="true"></i></a></a></li> -->
 					</ul>
 				</div>
 			</div>

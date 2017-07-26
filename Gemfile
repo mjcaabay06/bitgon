@@ -47,3 +47,5 @@ group :development do
 end
 
 gem 'metainspector'
+
+gem 'font-awesome-sass', '~> 4.7.0'
