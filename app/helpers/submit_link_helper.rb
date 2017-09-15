@@ -1,0 +1,2 @@
+module SubmitLinkHelper
+end

@@ -1,0 +1,310 @@
+<!-- ----------------------------------MODALS ------------------------------------- -->
+
+<div id="submit-modal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<a class="modal-close-btn" href="#" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></a>
+				<h4 class="modal-title">SUBMIT</h4>
+			</div>
+			<div class="modal-body">
+				<form action="submit-link" id="submit-link" method="post">
+					<i class="fa fa-newspaper-o" aria-hidden="true"></i>
+					<label class="submit-modal-title">NEWS</label>
+					<span class="submit-modal-extra-txt">News, articles, rumors, reviews, media etc.</span>
+					<input  class="form-control" name="tb_url" placeholder="Url">
+					<br/>
+					<i style="color: #ecc856;" class="fa fa-star" aria-hidden="true"></i>
+					<label class="submit-modal-title">USER REVIEW</label>
+					<span class="submit-modal-extra-txt">Share your own user review.</span>
+					<div class="login-btn">
+						<a href="#" class="action-button shadow animate green" >Submit</a>					
+					</div>	
+					<div class="clearfix"></div>		
+				</form>			
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="login-modal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">					
+				<a class="modal-close-btn" href="#" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></a>					
+				<ul id="tabs" class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active">
+						<a href="#all" role="tab" data-toggle="tab"><h4 class="modal-title">LOGIN</h4></a>
+					</li>
+					<li role="presentation">
+						<a href="#online" role="tab" data-toggle="tab"><h4 class="modal-title">REGISTER</h4></a>
+					</li>			
+				</ul>				
+			</div>
+			<div class="modal-body">
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane fade in active" id="all">
+						<input  class="form-control" placeholder="Enter email">
+						<br/>
+						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+						<a class="forgot-pw" href="#">Forgot Password</a>
+						<div class="login-btn">
+							<a href="#" class="action-button shadow animate green" >Login</a>					
+						</div>					
+						<div class="clearfix"></div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade" id="online">
+						<input  class="form-control" placeholder="First Name">
+						<br/>
+						<input  class="form-control" placeholder="Last Name">
+						<br/>
+						<input  class="form-control" placeholder="Email">
+						<br/>							
+						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+						<br/>
+						<div class="login-btn">
+							<a href="#" class="action-button shadow animate green" >Register</a>					
+						</div>					
+						<div class="clearfix"></div>												
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="add-video" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<a class="modal-close-btn" href="#" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></a>
+				<h4 class="modal-title">Video Embed Code</h4>
+			</div>
+			<div class="modal-body">					
+				<span class="submit-modal-extra-txt"> <i class="fa fa-play-circle" aria-hidden="true"></i>Embed code from video providers like youtube, hulu and vimeo.</span>
+				<input  class="form-control" placeholder="Paste video code here">
+				<br/>	
+				<div class="login-btn">
+					<a href="#" class="action-button shadow animate green" >Submit</a>					
+				</div>	
+				<div class="clearfix"></div>						
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="credit-url" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<a class="modal-close-btn" href="#" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></a>
+				<h4 class="modal-title">Add Alternative Source</h4>
+			</div>
+			<div class="modal-body">					
+				<span class="submit-modal-extra-txt"><i class="fa fa-check-square-o" aria-hidden="true"></i>Give credit to the website or blog that helped you find the story only if different from the main story URL you are submitting.</span>
+				<input  class="form-control" placeholder="Paste video code here">
+				<br/>	
+				<div class="login-btn">
+					<a href="#" class="action-button shadow animate green" >Submit</a>					
+				</div>	
+				<div class="clearfix"></div>						
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="create-tag" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<a class="modal-close-btn" href="#" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></a>
+				<h4 class="modal-title">Create a Tag</h4>
+			</div>
+			<div class="modal-body">					
+				<span class="submit-modal-extra-txt"><i class="fa fa-plus-circle" aria-hidden="true"></i>Type in your desired tag</span>
+				<input  class="form-control" placeholder="Paste video code here">
+				<br/>	
+				<div class="login-btn">
+					<a href="#" class="action-button shadow animate green" >Submit</a>					
+				</div>	
+				<div class="clearfix"></div>						
+			</div>
+		</div>
+	</div>
+</div>	
+
+
+
+
+<!-- ---------------------------------- END MODALS ------------------------------------- -->
+
+<div id="header">
+	<div class="container">
+		<nav class="navbar ">
+			<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header col-md-12 col-sm-12 col-xs-12 no-pads">
+					<div class="icon-btn-container col-md-6 no-pads">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#"><img src="/assets/logo.png"></a>
+						<div class="submit-btn">
+							<a href="#" class="action-button shadow animate green" data-toggle="modal" data-target="#submit-modal">Submit</a>					
+						</div>
+					</div>
+					<div class="social-media-container col-md-6 no-pads">
+						<a href="#"> <i class="fa fa-twitter" aria-hidden="true"></i></a>
+						<a href="#"> <i class="fa fa-facebook" aria-hidden="true"></i></a>
+						<a href="#"> <i class="fa fa-rss" aria-hidden="true"></i></a>
+						<a href="#"> <i class="fa fa-google-plus" aria-hidden="true"></i></a>
+					</div>
+				</div>
+			</div><!-- /.container-fluid -->
+		</nav>
+	</div>
+	<div class="navigation-button">
+		<div class="container">
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="no-pads collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="main-border nav navbar-nav navbar-left">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+						<ul class="dropdown-menu" >
+							<li><a href="#">Sample Tag here</a></li>
+							<li><a href="#">Tag #2</a></li>
+							<li><a href="#">Another Tag</a></li>
+							<li><a href="#">More Tag</a></li>
+							<li><a href="#">Tags pa more</a></li>
+							<li><a href="#">Tags Tags</a></li>
+							<li><a href="#">Tags</a></li>
+							<li><a href="#">Sample Tag here</a></li>
+							<li><a href="#">Tag #2</a></li>
+							<li><a href="#">Another Tag</a></li>
+							<li><a href="#">More Tag</a></li>
+							<li><a href="#">Tags pa more</a></li>
+							<li><a href="#">Tags Tags</a></li>								
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
+						<ul class="dropdown-menu expanded-menu">
+							<div class="box-container">
+								<li><a href="#">News</a></li>
+								<li><a href="#">Reviews</a></li>
+								<li><a href="#">Interviews</a></li>
+								<li><a href="#">Rumors</a></li>
+								<li><a href="#">Articles</a></li>
+								<li><a href="#">Opinions</a></li>
+								<li><a href="#">Blog</a></li>
+								<li><a href="#">guide</a></li>
+								<li><a href="#">Deeper News</a></li>
+								<li><a href="#">Leaks</a></li>									
+							</div>
+							<div class="box-container">									
+								<li><a href="#">Events</a></li>
+								<li><a href="#">Video</a></li>
+								<li><a href="#">Trailer</a></li>
+								<li><a href="#">Podcast</a></li>
+								<li><a href="#">Image</a></li>
+								<li><a href="#">Artwork</a></li>
+								<li><a href="#">Cosplay</a></li>
+							</div>
+						</ul>
+					</li>						
+					<li><a href="#">Forums</a></li>
+					<li><a href="#">About Us</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="search-btn">
+						<a class="search-icon" href="#"><i class="fa fa-search"></i></a>
+						<ul class="search-container">								
+							<input type="text" class="input search-field" placeholder="Serch Something...">
+							<button class="main-search-btn" data-dismiss="modal" aria-hidden="true">Search</button>
+						</ul>
+					</li>
+					<li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->				
+		</div>			
+	</div>
+	<div class="platform-menu">
+		<div class="container">
+			<div class="no-pads container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse no-pads" id="bs-example-navbar-collapse-2">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Playstation</a></li>
+						<li><a href="#">Xbox</a></li>
+						<li><a href="#">PC</a></li>
+						<li><a href="#">Mobile</a></li>
+						<li><a href="#">VR</a></li>
+						<li><a href="#">Nintendo</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</div>
+	</div>
+</div>
+
+
+<!-- -------------------------------------END HEADER------------------------------------- -->
+
+<script>	
+    $(document).ready(function () {
+        $('.dropdown-toggle').dropdown();
+
+        $(".dropdown").hover(            
+			function() {
+				$('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideDown("fast");
+				$(this).toggleClass('open');        
+			},
+			function() {
+				$('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideUp("fast");
+				$(this).toggleClass('open');       
+			}
+		);
+
+		$('.search-icon').on('click', function () {
+			$('.search-container').toggleClass('opened');
+		});
+
+		activaTab('suggested-tags');
+
+		$("#btn-get").on("click", function(){
+			// $.ajax({
+			// 	url: 'test/get-meta',
+			// 	type: 'GET',
+			// 	data: { url: $("#url").val() },
+			// 	success: function(response){
+			// 		$("#url-dis").html(response.url);
+			// 		$("#title").html(response.title);
+			// 		$("#des").html(response.description);
+			// 		$("#img").attr('src', response.meta_tags['property']['og:image'][0]);
+			// 	}
+			// });	
+		});
+    });
+
+    function activaTab(tab){
+	  $('.nav-tabs a[href="#' + tab + '"]').tab('show');
+	};
+</script>

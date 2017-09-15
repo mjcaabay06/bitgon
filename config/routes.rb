@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
+
+  get 'submit_link/index'
+
+  get '/submit-link' => 'submit_link#index'
+  post '/submit-link' => 'submit_link#index'
+
+  
   namespace :admin do
     # resources :submit_link, :path => 'submit-link' do
     #   post :index
     # end
 
-    get '/submit-link' => 'submit_link#index'
-    post '/submit-link' => 'submit_link#index'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
