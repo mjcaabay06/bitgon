@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'submit_link/index'
+  # get 'submit_link/index'
 
-  get '/submit-link' => 'submit_link#index'
-  post '/submit-link' => 'submit_link#index'
+  # get '/submit-link' => 'submit_link#index'
+  # post '/submit-link' => 'submit_link#index'
+  root "application#index"
+  resources :articles
 
   
   namespace :admin do

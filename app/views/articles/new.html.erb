@@ -1,4 +1,4 @@
-<!-- ------------------------------------- START BODY ------------------------------------- -->
+------------------------------------- START BODY ------------------------------------- -->
 <div id="body" class="body">	
 	<div class="container">		
 		<div class="row">
@@ -32,38 +32,10 @@
 						<textarea class="form-control textarea" id="Message" placeholder="Synopsis"><%= @page ? @page.description : '' %></textarea>
 					</div>
 					<div class="no-pads-left col-md-6" >
-						<!-- <select id="selectbasic" name="selectbasic" class="form-control input-md">
-							<option>Select Category</option>
-							<option>News</option>
-							<option>Reviews</option>
-							<option>Interviews</option>
-							<option>Rumors</option>
-							<option>Articles</option>
-							<option>Opinions</option>
-							<option>Guide</option>
-							<option>Deeper News</option>
-							<option>Leaks</option>
-							<option>Events</option>
-							<option>Video</option>
-							<option>Trailer</option>
-							<option>Podcast</option>
-							<option>Image</option>
-							<option>Artwork</option>
-							<option>Cosplay</option>
-						</select> -->
-
-						<%= select("article", "article_category", ArticleCategory.all.collect { |a| [a.id,a.description] }, {prompt: "Select Category"}, :class => "form-control input-md", :id => "selectbasic" ) %>
+						<%= select("article", "article_category", ArticleCategory.all.order(:description).collect { |a| [a.description,a.id] }, {prompt: "Select Category"}, :class => "form-control input-md", :id => "selectbasic" ) %>
 					</div>
 					<div class="no-pads-right col-md-6">
-						<select id="selectbasic" name="selectbasic" class="form-control input-md">
-							<option>Select Platform</option>
-							<option>Playstation</option>
-							<option>Xbox</option>
-							<option>PC</option>
-							<option>Mobile</option>
-							<option>VR</option>
-							<option>Nintendo</option>
-						</select>
+						<%= select("article", "article_category", ArticlePlatform.all.order(:description).collect { |a| [a.description,a.id] }, {prompt: "Select Platform"}, :class => "form-control input-md", :id => "selectbasic" ) %>
 					</div>	
 				</div>
 			</div>
@@ -159,4 +131,4 @@
 			</div>				
 		</div>
 	</div><!-- -- END Container-- -->
-</div><!-- -- END BODY-- -->
+</div><!-- -- END BODY--
