@@ -44,9 +44,12 @@
 					<ul class="tags-list">
 						<% unless @page.blank? %>
 							<% 
-								keyword = @page.meta_tag['name']['news_keywords'].blank? ? @page.meta_tag['name']['keywords'] : @page.meta_tag['name']['news_keywords']
+							keyword = @page.meta_tag['name']['news_keywords'].blank? ? @page.meta_tag['name']['keywords'] : @page.meta_tag['name']['news_keywords']
+							
+							unless keyword.blank?
 								keyword.split(',').each do |tag| %>
-								<li><a href=""><%= tag %><a class="del-tag" href="#"><i class="fa fa-times" aria-hidden="true"></i></a></a></li>
+									<li><a href=""><%= tag %><a class="del-tag" href="#"><i class="fa fa-times" aria-hidden="true"></i></a></a></li>
+								<% end %>
 							<% end %>
 						<% end %>
 						
