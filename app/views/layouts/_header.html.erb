@@ -47,26 +47,26 @@
 			<div class="modal-body">
 				<div class="tab-content">
 					<div role="tabpanel" class="tab-pane fade in active" id="all">
-						<input  class="form-control" placeholder="Enter email">
+						<input  class="form-control" placeholder="Enter email" name="login-email">
 						<br/>
-						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="login-password">
 						<a class="forgot-pw" href="#">Forgot Password</a>
 						<div class="login-btn">
-							<a href="#" class="action-button shadow animate green" >Login</a>					
+							<a href="#" class="action-button shadow animate green" id="btn-login" >Login</a>					
 						</div>					
 						<div class="clearfix"></div>
 					</div>
 					<div role="tabpanel" class="tab-pane fade" id="online">
-						<input  class="form-control" placeholder="First Name">
+						<input  class="form-control" placeholder="First Name" name="first_name">
 						<br/>
-						<input  class="form-control" placeholder="Last Name">
+						<input  class="form-control" placeholder="Last Name" name="last_name">
 						<br/>
-						<input  class="form-control" placeholder="Email">
+						<input  class="form-control" placeholder="Email" name="email">
 						<br/>							
-						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
 						<br/>
 						<div class="login-btn">
-							<a href="#" class="action-button shadow animate green" >Register</a>					
+							<a href="#" id="btn-register" class="action-button shadow animate green" >Register</a>					
 						</div>					
 						<div class="clearfix"></div>												
 					</div>					
@@ -159,7 +159,7 @@
 						</button>
 						<a class="navbar-brand" href="#"><img src="/assets/logo.png"></a>
 						<div class="submit-btn">
-							<a href="#" class="action-button shadow animate green" data-toggle="modal" data-target="#submit-modal">Submit</a>					
+							<a href="#" class="action-button shadow animate green" data-toggle="modal" data-target="<%= @user.blank? ? '#login-modal' : '#submit-modal' %>">Submit</a>					
 						</div>
 					</div>
 					<div class="social-media-container col-md-6 no-pads">
@@ -301,6 +301,38 @@
 			// 		$("#img").attr('src', response.meta_tags['property']['og:image'][0]);
 			// 	}
 			// });	
+		});
+
+		$("#btn-login").on('click', function(){
+			var data = new Object();
+			data.email_address = $("input[name=login-email]").val();
+			data.password = $("input[name=login-password]").val();
+
+			$.ajax({
+				url: '/login',
+				type: 'post',
+				data: { data: data },
+				success: function(response){
+					console.log(response);
+				}
+			});
+		});
+
+		$("#btn-register").on('click', function(){
+			var data = new Object();
+			data.first_name = $("input[name=first_name]").val();
+			data.last_name = $("input[name=last_name]").val();
+			data.email_address = $("input[name=email]").val();
+			data.password = $("input[name=password]").val();
+
+			$.ajax({
+				url: '/register',
+				type: 'post',
+				data: { data: data },
+				success: function(response){
+					console.log(response);
+				}
+			});
 		});
     });
 

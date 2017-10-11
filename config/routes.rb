@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   # get '/submit-link' => 'submit_link#index'
   # post '/submit-link' => 'submit_link#index'
   root "application#index"
+  post 'login' => 'applications#login'
+  post 'register' => 'applications#register'
+  get 'logout' => 'applications#destroy'
+  
   resources :articles
 
   
