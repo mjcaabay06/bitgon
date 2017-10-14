@@ -9,7 +9,7 @@
 				<h4 class="modal-title">SUBMIT</h4>
 			</div>
 			<div class="modal-body">
-				<form action="/articles/new" id="submit-link" method="get">
+				<form action="/articles" id="submit-link" method="get">
 					<i class="fa fa-newspaper-o" aria-hidden="true"></i>
 					<label class="submit-modal-title">NEWS</label>
 					<span class="submit-modal-extra-txt">News, articles, rumors, reviews, media etc.</span>
@@ -232,7 +232,14 @@
 							<button class="main-search-btn" data-dismiss="modal" aria-hidden="true">Search</button>
 						</ul>
 					</li>
-					<li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+					<li>
+						<% if @user.blank? %>
+							<a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+						<% else %>
+							<a href="/logout" >Logout</a>
+						<% end %>
+						
+					</li>
 				</ul>
 			</div><!-- /.navbar-collapse -->				
 		</div>			
@@ -289,6 +296,10 @@
 
 		activaTab('suggested-tags');
 
+		$("input[name=tb_url]").on('input', function(){
+			$("#submit-link").submit();
+		});
+
 		$("#btn-get").on("click", function(){
 			// $.ajax({
 			// 	url: 'test/get-meta',
@@ -313,7 +324,9 @@
 				type: 'post',
 				data: { data: data },
 				success: function(response){
-					console.log(response);
+					if (response.status) {
+						window.location.href = '/';
+					}
 				}
 			});
 		});
