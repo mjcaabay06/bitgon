@@ -1,0 +1,179 @@
+<% content_for :header do %>
+	<style type="text/css">
+		.sd-image{
+			float: right;
+			width: 40%;
+			margin-left: 15px;
+			margin-bottom: 15px;
+			overflow: hidden;
+		}
+		.sd-image img{
+			display: block;
+			width: 100%
+		}
+		.main-post-container{
+			width: 100%;
+		}
+
+		.sd-tags{
+			margin-top: 15px;
+			display: block;
+		}
+
+		.sd-tags a{
+			text-decoration: none;
+		    opacity: 1;
+		    margin: 5px 5px 0 0;
+		    display: inline-block;
+		    color: #7f7f7f;
+		    border-bottom: 2px solid #c3c3c3;
+		    font-family: Roboto;
+		    padding: 1px 5px;
+		    font-weight: 300;
+		    font-size: .8em;
+		    white-space: nowrap;
+		    vertical-align: top;
+		}
+		.sd-source{
+			margin-top: 30px;
+    		margin-bottom: 20px;
+		}
+		.sd-source-link{
+			display: inline-block;
+		    color: #2770a5;
+		    font-weight: 600;
+		    padding: 0;
+		    font-size: 1.2em;
+		}
+	</style>
+<% end %>
+<div id="body" class="body">	
+	<div class="container">		
+		<div class="image-container">
+			<div class="article-social-container">
+				<ul class="social-list">
+					<li class="facebook"><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+					<li class="twitter"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li class="googleplus"><a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+					<li class="plus"><a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
+			<img src="/assets/article-heading-img.jpg">
+		</div>
+					
+		<div class="post-container">
+			<div class="col-md-8 no-pads">
+				<div class="main-post-container">
+					<div class="main-post-tile"><%= @article.title %></div>
+					<div class="main-post-user"><i class="fa fa-user" aria-hidden="true"></i><%= @article.user.email_address.to_s.split('@')[0] %></div>
+					<div class="main-post-date"><i class="fa fa-calendar" aria-hidden="true"></i>Apr 25, 2017</div>
+					<div class="main-post-views"><i class="fa fa-eye" aria-hidden="true"></i>100</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="post-content">
+					<div class="sd-image">
+						<img src="<%= @article.image_url %>" style="display: block;width: 100%;">
+					</div>
+					<div class="sd-content">
+						<p><%= @article.synopsis %></p>
+						<div class="sd-tags">
+							<% ArticleTag.where('article_id = ?', @article.id).each do |tag| %>
+								<a href="#" class="sd-tag"><%= tag.tag %></a>
+							<% end %>
+						</div>
+						<div class="sd-source">
+							<a href="<%= @article.article_url %>" target="_blank" class="sd-source-link">Read Full Story &gt;&gt;</a>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				<div class="post-comments">
+					<div class="comment-count">99 Comments</div>
+					<div class="main-comment">
+						<div class="avatar-container"><img src="/assets/avatar1.jpg"></div>
+						<div class="comment-container">							
+							<div class="comment-user-name">A WordPress Commenter</div>
+							<div class="comment-date">on May 18, 2017 at 9:46 am</div>
+							<div class="comment-main">Hac, arcu, habitasse feugiat suspendisse turpis quam ac platea habitasse fermentum arcu lorem. Dictumst magna Lobortis Lacus egestas consequat metus purus etiam ac nec dapibus hendrerit blandit aliquam tellus per nam ante montes ultrices.</div>								
+						</div>
+						<div class="reply-btn-container"><a class="reply-btn" href="#">Reply</a></div>
+					</div>
+					<div class="comment-reply">
+						<div class="avatar-container"><img src="/assets/avatar2.jpg"></div>
+						<div class="comment-container">							
+							<div class="comment-user-name">Admin</div>
+							<div class="comment-date">on May 18, 2017 at 9:46 am</div>
+							<div class="comment-main">Lobortis nisi aptent elementum mi bibendum feugiat ridiculus tellus aenean justo facilisis primis etiam. Congue. </div>																
+						</div>
+						<div class="reply-btn-container"><a class="reply-btn" href="#">Reply</a></div>
+					</div>
+					<div class="comment-reply">
+						<div class="avatar-container"><img src="/assets/avatar2.jpg"></div>
+						<div class="comment-container">							
+							<div class="comment-user-name">Admin</div>
+							<div class="comment-date">on May 18, 2017 at 9:46 am</div>
+							<div class="comment-main">Lobortis nisi aptent elementum mi bibendum feugiat ridiculus tellus aenean justo facilisis primis etiam. Congue. </div>																
+						</div>
+						<div class="reply-btn-container"><a class="reply-btn" href="#">Reply</a></div>
+					</div>
+					<div class="main-comment">
+						<div class="avatar-container"><img src="/assets/avatar1.jpg"></div>
+						<div class="comment-container">							
+							<div class="comment-user-name">A WordPress Commenter</div>
+							<div class="comment-date">on May 18, 2017 at 9:46 am</div>
+							<div class="comment-main">Hac, arcu, habitasse feugiat suspendisse turpis quam ac platea habitasse fermentum arcu lorem. Dictumst magna Lobortis Lacus egestas consequat metus purus etiam ac nec dapibus hendrerit blandit aliquam tellus per nam ante montes ultrices.</div>								
+						</div>
+						<div class="reply-btn-container"><a class="reply-btn" href="#">Reply</a></div>
+					</div>
+					<div class="comment-reply">
+						<div class="avatar-container"><img src="/assets/avatar2.jpg"></div>
+						<div class="comment-container">							
+							<div class="comment-user-name">Admin</div>
+							<div class="comment-date">on May 18, 2017 at 9:46 am</div>
+							<div class="comment-main">Lobortis nisi aptent elementum mi bibendum feugiat ridiculus tellus aenean justo facilisis primis etiam. Congue. </div>																
+						</div>
+						<div class="reply-btn-container"><a class="reply-btn" href="#">Reply</a></div>
+					</div>						
+				</div>
+				
+				
+				<div class="submit-comment">
+					<div class="submit-comment-txt">Submit a Comment</div>
+					<a class="comment-login-out" href="#">Logged in as admin. Log out?</a>
+					<textarea class="textarea" id="comment" placeholder="Comment"></textarea>
+					<div class="reply-btn-container"><a class="reply-btn" href="#">Submit Comment</a></div>
+				</div>
+				
+				<br/><br/><br/><br/><br/><br/>
+			</div>
+			
+			<div class="col-md-4 no-pads-right">
+				<a href="#" class="related-article-container">
+					<div class="related-article">	
+						<img class="img-responsive" src="/assets/side-img1.jpg">
+						<div class="related-title">Battlefield 1′ DLC Maps Are Coming For Free</div>
+					</div>
+				</a>
+				<a href="#" class="related-article-container">
+					<div class="related-article">	
+						<img class="img-responsive" src="/assets/side-img2.jpg">
+						<div class="related-title">Should We Expect An April Fools Day Event For The Pokemon Go?</div>
+					</div>
+				</a>
+				<a href="#" class="related-article-container">
+					<div class="related-article">	
+						<img class="img-responsive" src="/assets/side-img3.jpg">
+						<div class="related-title">Overwatch Teases Potential New Event Coming On April 12</div>
+					</div>
+				</a>
+				<a href="#" class="related-article-container">
+					<div class="related-article">	
+						<img class="img-responsive" src="/assets/side-img4.jpg">
+						<div class="related-title">Battlefield 1′ DLC Maps Are Coming For Free</div>
+					</div>
+				</a>					
+			</div>
+		</div>
+	</div><!---- END Container---->
+</div>

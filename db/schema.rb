@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920075310) do
+ActiveRecord::Schema.define(version: 20171013184214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,32 @@ ActiveRecord::Schema.define(version: 20170920075310) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "article_tags", force: :cascade do |t|
+    t.integer  "article_id"
+    t.string   "tag"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "article_tags", ["article_id"], name: "index_article_tags_on_article_id", using: :btree
+
+  create_table "articles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "article_url"
+    t.string   "image_url"
+    t.string   "title"
+    t.string   "synopsis"
+    t.integer  "article_category_id"
+    t.integer  "article_platform_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.boolean  "published"
+  end
+
+  add_index "articles", ["article_category_id"], name: "index_articles_on_article_category_id", using: :btree
+  add_index "articles", ["article_platform_id"], name: "index_articles_on_article_platform_id", using: :btree
+  add_index "articles", ["user_id"], name: "index_articles_on_user_id", using: :btree
 
   create_table "statuses", force: :cascade do |t|
     t.string   "description"
@@ -62,6 +88,10 @@ ActiveRecord::Schema.define(version: 20170920075310) do
   add_index "users", ["status_id"], name: "index_users_on_status_id", using: :btree
   add_index "users", ["user_role_id"], name: "index_users_on_user_role_id", using: :btree
 
+  add_foreign_key "article_tags", "articles"
+  add_foreign_key "articles", "article_categories"
+  add_foreign_key "articles", "article_platforms"
+  add_foreign_key "articles", "users"
   add_foreign_key "user_infos", "users"
   add_foreign_key "users", "statuses"
   add_foreign_key "users", "user_roles"
